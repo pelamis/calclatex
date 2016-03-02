@@ -1,4 +1,4 @@
-// Generated from D:/Google Drive/vault/Courseproj/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daria/Documents/IdeaProjects/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
 package com.bmstu;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -23,6 +23,30 @@ public class interpreterBaseListener implements interpreterListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStart(interpreterParser.StartContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOpenblk(interpreterParser.OpenblkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOpenblk(interpreterParser.OpenblkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCloseblk(interpreterParser.CloseblkContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCloseblk(interpreterParser.CloseblkContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

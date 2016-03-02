@@ -1,4 +1,4 @@
-// Generated from D:/Google Drive/vault/Courseproj/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daria/Documents/IdeaProjects/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
 package com.bmstu;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -17,6 +17,26 @@ public interface interpreterListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStart(interpreterParser.StartContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link interpreterParser#openblk}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpenblk(interpreterParser.OpenblkContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link interpreterParser#openblk}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpenblk(interpreterParser.OpenblkContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link interpreterParser#closeblk}.
+	 * @param ctx the parse tree
+	 */
+	void enterCloseblk(interpreterParser.CloseblkContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link interpreterParser#closeblk}.
+	 * @param ctx the parse tree
+	 */
+	void exitCloseblk(interpreterParser.CloseblkContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link interpreterParser#code}.
 	 * @param ctx the parse tree
