@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/macrolatex.iml" filepath="$PROJECT_DIR$/macrolatex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calcLaTeX.iml" filepath="$PROJECT_DIR$/calcLaTeX.iml" />
     </modules>
   </component>
 </project>

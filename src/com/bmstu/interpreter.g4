@@ -1,16 +1,12 @@
 grammar interpreter;
 
-start:  (IMACRO LCURLB (cnstrct NEWLINE+)+ RCURLB
-        |IPRINT LCURLB (cnstrct NEWLINE+)+ RCURLB)* EOF
+start:  ((IMACRO|IPRINT) LCURLB code RCURLB)* EOF
         ;
 
-code:   (cnstrct)+
-        ;
+//code:   (cnstrct)+
+//        ;
 
-cnstrct:cond
-        |loop
-        |assgn
-        |lgcexpr
+code:   (lgcexpr|loop|assgn|cond)+
         ;
         
 lgcexpr: lgcexpr OR lgcand
@@ -57,7 +53,7 @@ pow:    pow POWOP prim
 
 prim:   func
         |IDENT index?
-        |LPAREN lgcexpr RPAREN index
+        |LPAREN lgcexpr RPAREN index?
         |literal
         ;
 
@@ -167,5 +163,5 @@ RTEXT: TEXT LCURLB (SPECSYM|CYRSYM|LTEXT)+ RCURLB;
 SPECSYM: '\\'[a-zA-Z]* ;
 CYRSYM: [\u0400-\u04FF];
 
-NEWLINE: ('\r'?'\n' | '\r');
-WS: [ \t\r]+ -> skip;
+//NEWLINE: ('\r'?'\n' | '\r');
+WS: [ \t\r\n]+ -> skip;

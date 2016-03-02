@@ -1,4 +1,4 @@
-\iprint{(2+2)*(x*y*(1/(z+2)))}
+\iprint{(2+2)\cdot(x\cdot y\cdot(1/(z+2)))}
 
 \imacro{
     f(x):=n^2
