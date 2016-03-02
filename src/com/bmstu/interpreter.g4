@@ -1,12 +1,14 @@
 grammar interpreter;
 
-start:  ((IMACRO|IPRINT) LCURLB code RCURLB)* EOF
+start:  ((IMACRO|IPRINT) openblk code closeblk)* EOF
         ;
 
 //code:   (cnstrct)+
 //        ;
 
-code:   (lgcexpr|loop|assgn|cond)+
+openblk: LCURLB '\n'*;
+closeblk: '\n'* RCURLB '\n'*;
+code:   (lgcexpr';'|loop|assgn|cond)+
         ;
         
 lgcexpr: lgcexpr OR lgcand
@@ -28,7 +30,7 @@ cmpr:   cmpr LE expr
         |expr
         ;
 
-expr:   expr PLUS term
+expr:   expr'+'term
         |expr MINUS term
         |term
         ;
@@ -70,7 +72,7 @@ literal: NUM
        |matr
         ;
 
-assgn:  lop ASGNOP rop;
+assgn:  lop ASGNOP rop SMCOLON+;
 lop:    IDENT
         |IDENT index
         |func;
@@ -81,15 +83,15 @@ rop:    lgcexpr
         ;
 
 //conditional statement
-cond:   SWITCHOP LCURLB cond1 RCURLB;
+cond:   SWITCHOP openblk cond1 closeblk;
 
 cond1:  mcase cond1
         |mdefault
         ;
 
-mcase:   CASEOP LCURLB lgcexpr RCURLB LCURLB code RCURLB;
+mcase:   CASEOP openblk lgcexpr closeblk openblk code closeblk;
 
-mdefault: DEFOP LCURLB code RCURLB;
+mdefault: DEFOP openblk code closeblk;
 
 //loop statement
 loop:   loopcnd LCURLB code RCURLB;
@@ -98,8 +100,7 @@ loopcnd:lgcexpr IN LCURLB lgcexpr SMCOLON lgcexpr RCURLB;
 
 func:   IDENT LPAREN args RPAREN;
 
-args:   lgcexpr COMMA args
-        |lgcexpr
+args:   (lgcexpr COMMA)* lgcexpr
         ;
 
 VECT:    '\\vect';
@@ -155,13 +156,11 @@ NUM:[0-9]+'.'[0-9]+
     |[0-9]+
     ;
 
-
-
 LTEXT: [a-zA-Z]+[a-zA-Z0-9]*;
 
-RTEXT: TEXT LCURLB (SPECSYM|CYRSYM|LTEXT)+ RCURLB;
-SPECSYM: '\\'[a-zA-Z]* ;
-CYRSYM: [\u0400-\u04FF];
+RTEXT: TEXT LCURLB RSYM+ RCURLB;
 
-//NEWLINE: ('\r'?'\n' | '\r');
+RSYM: ~[ \t\r\n'{''}'];
+
+//NEWLINE: '\n';
 WS: [ \t\r\n]+ -> skip;
