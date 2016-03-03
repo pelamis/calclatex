@@ -3,11 +3,9 @@ grammar interpreter;
 start:  ((IMACRO|IPRINT) openblk code closeblk)* EOF
         ;
 
-//code:   (cnstrct)+
-//        ;
-
 openblk: LCURLB '\n'*;
 closeblk: '\n'* RCURLB '\n'*;
+
 code:   (lgcexpr';'|loop|assgn|cond)+
         ;
         
@@ -69,7 +67,7 @@ matr:   MATR'['('['lgcexpr (','lgcexpr)*']')+']';
 
 literal: NUM
         |vect
-       |matr
+        |matr
         ;
 
 assgn:  lop ASGNOP rop SMCOLON+;
@@ -98,11 +96,14 @@ loop:   loopcnd LCURLB code RCURLB;
 
 loopcnd:lgcexpr IN LCURLB lgcexpr SMCOLON lgcexpr RCURLB;
 
+//func call
 func:   IDENT LPAREN args RPAREN;
 
 args:   (lgcexpr COMMA)* lgcexpr
         ;
-
+/********************************************************
+*                    LEXER RULES                        *
+*********************************************************/
 VECT:    '\\vect';
 MATR:    '\\matr';
 IMACRO:  '\\imacro';
@@ -120,11 +121,11 @@ TRANSP: '\\transpose';
 
 TEXT: '\\text';
 
-OR:      '\\or';
-AND:     '\\and';
+OR:      '\\lor';
+AND:     '\\land';
 GEQ:     '\\ge';
 LEQ:     '\\le';
-NEQ:     '\\ne';
+NEQ:     '\\neq';
 EQ:      '=';
 GE:      '>';
 LE:      '<';
@@ -132,7 +133,8 @@ PLUS:    '+';
 MINUS:   '-';
 MUL:     '\\cdot';
 POWOP:   '^';
-DIV:     '/';
+DIV:     '\\div';
+FRAC:    '\\frac';
 
 
 LCURLB:  '{';
@@ -160,7 +162,6 @@ LTEXT: [a-zA-Z]+[a-zA-Z0-9]*;
 
 RTEXT: TEXT LCURLB RSYM+ RCURLB;
 
-RSYM: ~[ \t\r\n'{''}'];
+RSYM: ~[ \t\r\n{}];
 
-//NEWLINE: '\n';
 WS: [ \t\r\n]+ -> skip;
