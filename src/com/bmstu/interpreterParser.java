@@ -41,7 +41,7 @@ public class interpreterParser extends Parser {
 		null, "'\n'", "'\\vect'", "'\\matr'", "'\\imacro'", "'\\iprint'", "'\\conditional'", 
 		"'\\case'", "'\\otherwise'", "'\\at'", "'\\in'", "'\\times'", "'\\hidemul'", 
 		"'\\inverse'", "'\\transpose'", "'\\text'", "'\\lor'", "'\\land'", "'\\ge'", 
-		"'\\le'", "'\\neq'", "'='", "'>'", "'<'", "'+'", "'-'", "'\\cdot'", "'^'", 
+		"'\\le'", "'\\ne'", "'='", "'>'", "'<'", "'+'", "'-'", "'\\cdot'", "'^'", 
 		"'\\div'", "'\\frac'", "'{'", "'}'", "'('", "')'", "'['", "']'", "'|'", 
 		"'_'", "':='", "'.'", "','", "';'"
 	};

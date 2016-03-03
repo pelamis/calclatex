@@ -17,6 +17,8 @@ lgcand: lgcand AND cmpeq
         | cmpeq
         ;
 
+//Logic expressions
+
 cmpeq:  cmpeq EQ cmpr
         |cmpeq NEQ cmpr
         |cmpr
@@ -28,6 +30,7 @@ cmpr:   cmpr LE expr
         |expr
         ;
 
+//Arithmetic expressions
 expr:   expr'+'term
         |expr MINUS term
         |term
@@ -61,8 +64,10 @@ index:  (AT LCURLB expr RCURLB)
         |(AT LCURLB expr COMMA expr RCURLB)
         ;
 
+//Vector definition
 vect:   VECT'['lgcexpr (','lgcexpr)* ']';
 
+//Matrix definition
 matr:   MATR'['('['lgcexpr (','lgcexpr)*']')+']';
 
 literal: NUM
@@ -70,6 +75,7 @@ literal: NUM
         |matr
         ;
 
+//Assignment
 assgn:  lop ASGNOP rop SMCOLON+;
 lop:    IDENT
         |IDENT index
@@ -125,7 +131,7 @@ OR:      '\\lor';
 AND:     '\\land';
 GEQ:     '\\ge';
 LEQ:     '\\le';
-NEQ:     '\\neq';
+NEQ:     '\\ne';
 EQ:      '=';
 GE:      '>';
 LE:      '<';
