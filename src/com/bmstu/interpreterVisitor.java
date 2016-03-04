@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daria/Documents/IdeaProjects/calclatex/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daria/Documents/IdeaProjects/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
 package com.bmstu;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -132,6 +132,13 @@ public interface interpreterVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTermExpr(interpreterParser.TermExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code subExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubExpr(interpreterParser.SubExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code hiddenMul}
 	 * labeled alternative in {@link interpreterParser#term}.

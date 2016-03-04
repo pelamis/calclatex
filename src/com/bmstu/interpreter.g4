@@ -31,7 +31,8 @@ cmpr:   cmpr LE expr        #lessExpr
         ;
 
 //Arithmetic expressions
-expr:   expr(PLUS|MINUS)term         #addExpr
+expr:   left=expr PLUS right=term    #addExpr
+        |expr MINUS term             #subExpr
         |term                        #termExpr
         ;
 

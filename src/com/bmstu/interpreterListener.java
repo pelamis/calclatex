@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daria/Documents/IdeaProjects/calclatex/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daria/Documents/IdeaProjects/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
 package com.bmstu;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -215,6 +215,18 @@ public interface interpreterListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTermExpr(interpreterParser.TermExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code subExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubExpr(interpreterParser.SubExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code subExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubExpr(interpreterParser.SubExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code hiddenMul}
 	 * labeled alternative in {@link interpreterParser#term}.
