@@ -9,59 +9,58 @@ closeblk: '\n'* RCURLB '\n'*;
 code:   (lgcexpr';'|loop|assgn|cond)+
         ;
         
-lgcexpr: lgcexpr OR lgcand
-        | lgcand
+lgcexpr: lgcexpr OR lgcand  #orExpr
+        | lgcand            #lgcandExpr
         ;
 
-lgcand: lgcand AND cmpeq
-        | cmpeq
+lgcand: lgcand AND cmpeq    #andExpr
+        | cmpeq             #cmpeqExpr
         ;
 
 //Logic expressions
 
-cmpeq:  cmpeq EQ cmpr
-        |cmpeq NEQ cmpr
-        |cmpr
+cmpeq:  cmpeq EQ cmpr       #equalExpr
+        |cmpeq NEQ cmpr     #notEqualExpr
+        |cmpr               #cmprExpr
         ;
-cmpr:   cmpr LE expr
-        |cmpr LEQ expr
-        |cmpr GE expr
-        |cmpr GEQ expr
-        |expr
+cmpr:   cmpr LE expr        #lessExpr
+        |cmpr LEQ expr      #lessOrEqExpr
+        |cmpr GE expr       #greaterExpr
+        |cmpr GEQ expr      #greaterOrEqExpr
+        |expr               #arithExpr
         ;
 
 //Arithmetic expressions
-expr:   expr'+'term
-        |expr MINUS term
-        |term
+expr:   expr(PLUS|MINUS)term         #addExpr
+        |term                        #termExpr
         ;
 
-term:   term MUL factor
-        |term HMUL factor
-        |term DIV factor
-        |term VMUL factor
-        |factor
+term:   term MUL factor              #mulExpr
+        |term HMUL factor            #hiddenMul
+        |term DIV factor             #divExpr
+        |term VMUL factor            #vectorMul
+        |factor                      #factorExpr
         ;
 
-factor: MINUS pow
-        |INV LCURLB pow RCURLB
-        |TRANSP LCURLB pow RCURLB
-        |BAR pow BAR
-        |pow
+factor: MINUS pow                    #unaryMinus
+        |INV LCURLB pow RCURLB       #inversionExpr
+        |TRANSP LCURLB pow RCURLB    #transpExpr
+        |BAR pow BAR                 #modOrDet
+        |pow                         #pwrExpr
         ;
 
-pow:    pow POWOP prim
-        |prim
+pow:    pow POWOP prim               #powExpr
+        |prim                        #primExpr
         ;
 
-prim:   func
-        |IDENT index?
-        |LPAREN lgcexpr RPAREN index?
-        |literal
+prim:   func                          #funcInvoke
+        |IDENT index?                 #id
+        |LPAREN lgcexpr RPAREN index? #parExpr
+        |literal                      #atom
         ;
 
-index:  (AT LCURLB expr RCURLB)
-        |(AT LCURLB expr COMMA expr RCURLB)
+index:  (AT LCURLB expr RCURLB)       #vecIndex
+        |(AT LCURLB expr COMMA expr RCURLB) #matrIndex
         ;
 
 //Vector definition

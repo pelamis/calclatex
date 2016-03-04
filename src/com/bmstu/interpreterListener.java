@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daria/Documents/IdeaProjects/interpteter/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
+// Generated from C:/Users/Daria/Documents/IdeaProjects/calclatex/src/com/bmstu\interpreter.g4 by ANTLR 4.5.1
 package com.bmstu;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -48,105 +48,389 @@ public interface interpreterListener extends ParseTreeListener {
 	 */
 	void exitCode(interpreterParser.CodeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#lgcexpr}.
+	 * Enter a parse tree produced by the {@code lgcandExpr}
+	 * labeled alternative in {@link interpreterParser#lgcexpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterLgcexpr(interpreterParser.LgcexprContext ctx);
+	void enterLgcandExpr(interpreterParser.LgcandExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#lgcexpr}.
+	 * Exit a parse tree produced by the {@code lgcandExpr}
+	 * labeled alternative in {@link interpreterParser#lgcexpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitLgcexpr(interpreterParser.LgcexprContext ctx);
+	void exitLgcandExpr(interpreterParser.LgcandExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#lgcand}.
+	 * Enter a parse tree produced by the {@code orExpr}
+	 * labeled alternative in {@link interpreterParser#lgcexpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterLgcand(interpreterParser.LgcandContext ctx);
+	void enterOrExpr(interpreterParser.OrExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#lgcand}.
+	 * Exit a parse tree produced by the {@code orExpr}
+	 * labeled alternative in {@link interpreterParser#lgcexpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitLgcand(interpreterParser.LgcandContext ctx);
+	void exitOrExpr(interpreterParser.OrExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#cmpeq}.
+	 * Enter a parse tree produced by the {@code cmpeqExpr}
+	 * labeled alternative in {@link interpreterParser#lgcand}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmpeq(interpreterParser.CmpeqContext ctx);
+	void enterCmpeqExpr(interpreterParser.CmpeqExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#cmpeq}.
+	 * Exit a parse tree produced by the {@code cmpeqExpr}
+	 * labeled alternative in {@link interpreterParser#lgcand}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmpeq(interpreterParser.CmpeqContext ctx);
+	void exitCmpeqExpr(interpreterParser.CmpeqExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#cmpr}.
+	 * Enter a parse tree produced by the {@code andExpr}
+	 * labeled alternative in {@link interpreterParser#lgcand}.
 	 * @param ctx the parse tree
 	 */
-	void enterCmpr(interpreterParser.CmprContext ctx);
+	void enterAndExpr(interpreterParser.AndExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#cmpr}.
+	 * Exit a parse tree produced by the {@code andExpr}
+	 * labeled alternative in {@link interpreterParser#lgcand}.
 	 * @param ctx the parse tree
 	 */
-	void exitCmpr(interpreterParser.CmprContext ctx);
+	void exitAndExpr(interpreterParser.AndExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#expr}.
+	 * Enter a parse tree produced by the {@code cmprExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpr(interpreterParser.ExprContext ctx);
+	void enterCmprExpr(interpreterParser.CmprExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#expr}.
+	 * Exit a parse tree produced by the {@code cmprExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpr(interpreterParser.ExprContext ctx);
+	void exitCmprExpr(interpreterParser.CmprExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#term}.
+	 * Enter a parse tree produced by the {@code notEqualExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void enterTerm(interpreterParser.TermContext ctx);
+	void enterNotEqualExpr(interpreterParser.NotEqualExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#term}.
+	 * Exit a parse tree produced by the {@code notEqualExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void exitTerm(interpreterParser.TermContext ctx);
+	void exitNotEqualExpr(interpreterParser.NotEqualExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#factor}.
+	 * Enter a parse tree produced by the {@code equalExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void enterFactor(interpreterParser.FactorContext ctx);
+	void enterEqualExpr(interpreterParser.EqualExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#factor}.
+	 * Exit a parse tree produced by the {@code equalExpr}
+	 * labeled alternative in {@link interpreterParser#cmpeq}.
 	 * @param ctx the parse tree
 	 */
-	void exitFactor(interpreterParser.FactorContext ctx);
+	void exitEqualExpr(interpreterParser.EqualExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#pow}.
+	 * Enter a parse tree produced by the {@code greaterExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterPow(interpreterParser.PowContext ctx);
+	void enterGreaterExpr(interpreterParser.GreaterExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#pow}.
+	 * Exit a parse tree produced by the {@code greaterExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitPow(interpreterParser.PowContext ctx);
+	void exitGreaterExpr(interpreterParser.GreaterExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#prim}.
+	 * Enter a parse tree produced by the {@code greaterOrEqExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrim(interpreterParser.PrimContext ctx);
+	void enterGreaterOrEqExpr(interpreterParser.GreaterOrEqExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#prim}.
+	 * Exit a parse tree produced by the {@code greaterOrEqExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrim(interpreterParser.PrimContext ctx);
+	void exitGreaterOrEqExpr(interpreterParser.GreaterOrEqExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#index}.
+	 * Enter a parse tree produced by the {@code lessExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void enterIndex(interpreterParser.IndexContext ctx);
+	void enterLessExpr(interpreterParser.LessExprContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#index}.
+	 * Exit a parse tree produced by the {@code lessExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
 	 * @param ctx the parse tree
 	 */
-	void exitIndex(interpreterParser.IndexContext ctx);
+	void exitLessExpr(interpreterParser.LessExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arithExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterArithExpr(interpreterParser.ArithExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arithExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitArithExpr(interpreterParser.ArithExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code lessOrEqExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
+	 * @param ctx the parse tree
+	 */
+	void enterLessOrEqExpr(interpreterParser.LessOrEqExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code lessOrEqExpr}
+	 * labeled alternative in {@link interpreterParser#cmpr}.
+	 * @param ctx the parse tree
+	 */
+	void exitLessOrEqExpr(interpreterParser.LessOrEqExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code addExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterAddExpr(interpreterParser.AddExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code addExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitAddExpr(interpreterParser.AddExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code termExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterTermExpr(interpreterParser.TermExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code termExpr}
+	 * labeled alternative in {@link interpreterParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitTermExpr(interpreterParser.TermExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code hiddenMul}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterHiddenMul(interpreterParser.HiddenMulContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code hiddenMul}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitHiddenMul(interpreterParser.HiddenMulContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code mulExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulExpr(interpreterParser.MulExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code mulExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulExpr(interpreterParser.MulExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code divExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterDivExpr(interpreterParser.DivExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code divExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitDivExpr(interpreterParser.DivExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code factorExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFactorExpr(interpreterParser.FactorExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code factorExpr}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFactorExpr(interpreterParser.FactorExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code vectorMul}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterVectorMul(interpreterParser.VectorMulContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code vectorMul}
+	 * labeled alternative in {@link interpreterParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitVectorMul(interpreterParser.VectorMulContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code unaryMinus}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnaryMinus(interpreterParser.UnaryMinusContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code unaryMinus}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnaryMinus(interpreterParser.UnaryMinusContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code inversionExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterInversionExpr(interpreterParser.InversionExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code inversionExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitInversionExpr(interpreterParser.InversionExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code transpExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterTranspExpr(interpreterParser.TranspExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code transpExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitTranspExpr(interpreterParser.TranspExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code modOrDet}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterModOrDet(interpreterParser.ModOrDetContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code modOrDet}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitModOrDet(interpreterParser.ModOrDetContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code pwrExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterPwrExpr(interpreterParser.PwrExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code pwrExpr}
+	 * labeled alternative in {@link interpreterParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitPwrExpr(interpreterParser.PwrExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code primExpr}
+	 * labeled alternative in {@link interpreterParser#pow}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrimExpr(interpreterParser.PrimExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code primExpr}
+	 * labeled alternative in {@link interpreterParser#pow}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrimExpr(interpreterParser.PrimExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code powExpr}
+	 * labeled alternative in {@link interpreterParser#pow}.
+	 * @param ctx the parse tree
+	 */
+	void enterPowExpr(interpreterParser.PowExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code powExpr}
+	 * labeled alternative in {@link interpreterParser#pow}.
+	 * @param ctx the parse tree
+	 */
+	void exitPowExpr(interpreterParser.PowExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code funcInvoke}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void enterFuncInvoke(interpreterParser.FuncInvokeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code funcInvoke}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void exitFuncInvoke(interpreterParser.FuncInvokeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code id}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void enterId(interpreterParser.IdContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code id}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void exitId(interpreterParser.IdContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code parExpr}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void enterParExpr(interpreterParser.ParExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parExpr}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void exitParExpr(interpreterParser.ParExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code atom}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtom(interpreterParser.AtomContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code atom}
+	 * labeled alternative in {@link interpreterParser#prim}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtom(interpreterParser.AtomContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code vecIndex}
+	 * labeled alternative in {@link interpreterParser#index}.
+	 * @param ctx the parse tree
+	 */
+	void enterVecIndex(interpreterParser.VecIndexContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code vecIndex}
+	 * labeled alternative in {@link interpreterParser#index}.
+	 * @param ctx the parse tree
+	 */
+	void exitVecIndex(interpreterParser.VecIndexContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code matrIndex}
+	 * labeled alternative in {@link interpreterParser#index}.
+	 * @param ctx the parse tree
+	 */
+	void enterMatrIndex(interpreterParser.MatrIndexContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code matrIndex}
+	 * labeled alternative in {@link interpreterParser#index}.
+	 * @param ctx the parse tree
+	 */
+	void exitMatrIndex(interpreterParser.MatrIndexContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link interpreterParser#vect}.
 	 * @param ctx the parse tree
