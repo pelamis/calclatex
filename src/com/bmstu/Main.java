@@ -10,6 +10,8 @@ public class Main {
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         interpreterParser parser = new interpreterParser(tokens);
         ParseTree tree = parser.start();
+        interpreterVisitor eval = new doubleVisitor();
+        eval.visit(tree);
         System.out.println(tree.toStringTree(parser));
     }
 }

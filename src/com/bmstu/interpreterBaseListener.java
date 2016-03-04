@@ -484,13 +484,37 @@ public class interpreterBaseListener implements interpreterListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLiteral(interpreterParser.LiteralContext ctx) { }
+	@Override public void enterDoubleVal(interpreterParser.DoubleValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLiteral(interpreterParser.LiteralContext ctx) { }
+	@Override public void exitDoubleVal(interpreterParser.DoubleValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVectVal(interpreterParser.VectValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVectVal(interpreterParser.VectValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMatrVal(interpreterParser.MatrValContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMatrVal(interpreterParser.MatrValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

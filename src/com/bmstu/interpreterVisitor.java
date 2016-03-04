@@ -278,11 +278,26 @@ public interface interpreterVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMatr(interpreterParser.MatrContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link interpreterParser#literal}.
+	 * Visit a parse tree produced by the {@code doubleVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitLiteral(interpreterParser.LiteralContext ctx);
+	T visitDoubleVal(interpreterParser.DoubleValContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code vectVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVectVal(interpreterParser.VectValContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code matrVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMatrVal(interpreterParser.MatrValContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link interpreterParser#assgn}.
 	 * @param ctx the parse tree

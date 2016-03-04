@@ -464,15 +464,41 @@ public interface interpreterListener extends ParseTreeListener {
 	 */
 	void exitMatr(interpreterParser.MatrContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link interpreterParser#literal}.
+	 * Enter a parse tree produced by the {@code doubleVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void enterLiteral(interpreterParser.LiteralContext ctx);
+	void enterDoubleVal(interpreterParser.DoubleValContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link interpreterParser#literal}.
+	 * Exit a parse tree produced by the {@code doubleVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
 	 * @param ctx the parse tree
 	 */
-	void exitLiteral(interpreterParser.LiteralContext ctx);
+	void exitDoubleVal(interpreterParser.DoubleValContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code vectVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterVectVal(interpreterParser.VectValContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code vectVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitVectVal(interpreterParser.VectValContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code matrVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void enterMatrVal(interpreterParser.MatrValContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code matrVal}
+	 * labeled alternative in {@link interpreterParser#literal}.
+	 * @param ctx the parse tree
+	 */
+	void exitMatrVal(interpreterParser.MatrValContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link interpreterParser#assgn}.
 	 * @param ctx the parse tree

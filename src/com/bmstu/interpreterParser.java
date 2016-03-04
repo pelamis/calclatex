@@ -1052,12 +1052,10 @@ public class interpreterParser extends Parser {
 		}
 	}
 	public static class AddExprContext extends ExprContext {
-		public ExprContext left;
-		public TermContext right;
-		public TerminalNode PLUS() { return getToken(interpreterParser.PLUS, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
+		public TerminalNode PLUS() { return getToken(interpreterParser.PLUS, 0); }
 		public TermContext term() {
 			return getRuleContext(TermContext.class,0);
 		}
@@ -1156,14 +1154,13 @@ public class interpreterParser extends Parser {
 					case 1:
 						{
 						_localctx = new AddExprContext(new ExprContext(_parentctx, _parentState));
-						((AddExprContext)_localctx).left = _prevctx;
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(157);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
 						setState(158);
 						match(PLUS);
 						setState(159);
-						((AddExprContext)_localctx).right = term(0);
+						term(0);
 						}
 						break;
 					case 2:
@@ -2180,28 +2177,68 @@ public class interpreterParser extends Parser {
 	}
 
 	public static class LiteralContext extends ParserRuleContext {
-		public TerminalNode NUM() { return getToken(interpreterParser.NUM, 0); }
-		public VectContext vect() {
-			return getRuleContext(VectContext.class,0);
-		}
-		public MatrContext matr() {
-			return getRuleContext(MatrContext.class,0);
-		}
 		public LiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_literal; }
+	 
+		public LiteralContext() { }
+		public void copyFrom(LiteralContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class VectValContext extends LiteralContext {
+		public VectContext vect() {
+			return getRuleContext(VectContext.class,0);
+		}
+		public VectValContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).enterLiteral(this);
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).enterVectVal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).exitLiteral(this);
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).exitVectVal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof interpreterVisitor ) return ((interpreterVisitor<? extends T>)visitor).visitLiteral(this);
+			if ( visitor instanceof interpreterVisitor ) return ((interpreterVisitor<? extends T>)visitor).visitVectVal(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class DoubleValContext extends LiteralContext {
+		public TerminalNode NUM() { return getToken(interpreterParser.NUM, 0); }
+		public DoubleValContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).enterDoubleVal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).exitDoubleVal(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof interpreterVisitor ) return ((interpreterVisitor<? extends T>)visitor).visitDoubleVal(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class MatrValContext extends LiteralContext {
+		public MatrContext matr() {
+			return getRuleContext(MatrContext.class,0);
+		}
+		public MatrValContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).enterMatrVal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof interpreterListener ) ((interpreterListener)listener).exitMatrVal(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof interpreterVisitor ) return ((interpreterVisitor<? extends T>)visitor).visitMatrVal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2213,6 +2250,7 @@ public class interpreterParser extends Parser {
 			setState(280);
 			switch (_input.LA(1)) {
 			case NUM:
+				_localctx = new DoubleValContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(277);
@@ -2220,6 +2258,7 @@ public class interpreterParser extends Parser {
 				}
 				break;
 			case VECT:
+				_localctx = new VectValContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(278);
@@ -2227,6 +2266,7 @@ public class interpreterParser extends Parser {
 				}
 				break;
 			case MATR:
+				_localctx = new MatrValContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(279);

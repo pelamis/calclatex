@@ -31,7 +31,7 @@ cmpr:   cmpr LE expr        #lessExpr
         ;
 
 //Arithmetic expressions
-expr:   left=expr PLUS right=term    #addExpr
+expr:   expr PLUS term               #addExpr
         |expr MINUS term             #subExpr
         |term                        #termExpr
         ;
@@ -70,9 +70,9 @@ vect:   VECT'['lgcexpr (','lgcexpr)* ']';
 //Matrix definition
 matr:   MATR'['('['lgcexpr (','lgcexpr)*']')+']';
 
-literal: NUM
-        |vect
-        |matr
+literal: NUM                        #doubleVal
+        |vect                       #vectVal
+        |matr                       #matrVal
         ;
 
 //Assignment
